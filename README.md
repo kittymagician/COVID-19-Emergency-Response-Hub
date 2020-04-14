@@ -24,4 +24,10 @@ Register for a Twilio account and register a phone that is able to support SMS.
 
 7. Run python3 app.py
 
-8. Configure your proxy to accept the Flask connection from localhost:5000. Feel free to use Gunicorn. 
+8. Configure your proxy to accept the Flask connection from localhost:5000. Feel free to use Gunicorn.
+
+# With Thanks
+
+Joel Graham - joelagraham.co.uk - Web Interface Redesign
+
+Armin Ronacher - For building Flask! 
