@@ -1,0 +1,19 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>Emotional Support Hub</title>
+<div class="formwrapper">
+  <center>
+  <h2 class="title">Emotional Support Hub</h2>
+  <p>In the current strange times we know how hard it can be when your on your own. We provide a free volenteer callback service so you can chat with one of our volenteers</p>
+  <p>If you need urgent support please phone Samaritans: 116 123 </p>
+  <form class="form-signin" method="POST" action="/hub/emotionalsupport">
+      {{ form.csrf_token }}
+      <div class="form-field">{{ form.telephonenumber.label }} {{ form.telephonenumber }}</div>
+      <div class="form-field">{{ form.emotional.label }} {{ form.emotional }}</div>
+      <button type="submit">Submit your Emotional Support Request</button>
+  </form>
+  <p><a href="{{ url_for('hub') }}">Return back to the Hub.</a></p>
+</div>
+  </center>
+</html>

@@ -1,0 +1,42 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<h2>All Reports - Community Emergency Response Hub</h2> <p><a href={{ url_for('fullreport') }}>Full Report</a> <a href={{ url_for('openreport') }}>All Open Cases</a> <a href={{ url_for('dashboard') }}>Dashboard</a> <a href={{ url_for('user.logout') }}>Sign out</a></p>
+<br>
+<h3>All Web Reports</h3>
+<table class="table table-bordered">
+<thead>
+      <tr>
+        <th>Telephone Number</th>
+        <th>Request Category</th>
+        <th>Message</th>
+        <th>Status</th>
+      </tr>
+</thead>
+{% for item in items %}
+<tr>
+    <td>{{item[1]}}</td>
+    <td>{{item[2]}}</td>
+    <td>{{item[3]}}</td>
+    <td>{{item[4]}}</td>
+</td>
+{% endfor %}
+</table>
+<h3>All SMS Reports</h3>
+<table class="table table-bordered">
+<thead>
+      <tr>
+        <th>Telephone Number</th>
+        <th>Request Category</th>
+        <th>Message</th>
+        <th>Status</th>
+      </tr>
+</thead>
+{% for item in smsitems %}
+<tr>
+    <td>{{item[1]}}</td>
+    <td>{{item[2]}}</td>
+    <td>{{item[3]}}</td>
+    <td>{{item[4]}}</td>
+</td>
+{% endfor %}
+</table>

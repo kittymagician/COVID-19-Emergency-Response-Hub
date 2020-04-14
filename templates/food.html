@@ -1,0 +1,18 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>Food Hub</title>
+<div class="formwrapper">
+  <center>
+  <h2 class="title">Food Hub</h2>
+  <p>The community hub is able to provide food shopping for local residents. Leave a message below and one of our volenteers will be in touch.</p>
+  <form class="form-signin" method="POST" action="/hub/food">
+      {{ form.csrf_token }}
+      <div class="form-field">{{ form.telephonenumber.label }} {{ form.telephonenumber }}</div>
+      <div class="form-field">{{ form.food.label }} {{ form.food }}</div>
+      <button type="submit">Submit your food request</button>
+  </form>
+  <p><a href="{{ url_for('hub') }}">Return back to the Hub.</a></p>
+</div>
+  </center>
+</html>

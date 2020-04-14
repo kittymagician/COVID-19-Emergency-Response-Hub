@@ -1,0 +1,55 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<center>
+<h2>Dashboard - Community Emergency Response Hub</h2>
+<br>
+<h1>Open Cases - Web</h1>
+  <h2>{{ webreport }}</h2>
+<br>
+<h1>Open Cases - SMS</h1>
+<h2>{{ sms }}</h2>
+<br>
+<h1>Assigned Cases</h1>
+	<h2>{{ assigned }}</h2>
+<br>
+<h1>Closed Cases</h1>
+	<h2>{{ closed }}</h2>
+<p>Last Updated Date/Time: <span id="datetime"></span></p>
+<br>
+<p><a href={{ url_for('member_page') }}>Volenteer Hub</a></p><p><a href={{ url_for('user.logout') }}>Sign out</a></p>
+
+<script>
+<!--
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleString();
+//enter refresh time in "minutes:seconds" Minutes should range from 0 to inifinity. Seconds should range from 0 to 59
+var limit="0:30"
+
+var doctitle = document.title
+var parselimit=limit.split(":")
+parselimit=parselimit[0]*60+parselimit[1]*1
+
+function beginrefresh(){
+	if (parselimit==1)
+		window.location.reload()
+	else{ 
+		parselimit-=1
+		curmin=Math.floor(parselimit/60)
+		cursec=parselimit%60
+		if (curmin!=0)
+			curtime=curmin+" minutes and "+cursec+" seconds left until page refresh!"
+		else
+			curtime=cursec+" seconds left until page refresh!"
+		document.title = doctitle + ' (' + curtime +')'
+		setTimeout("beginrefresh()",1000)
+	}
+}
+
+if (window.addEventListener)
+	window.addEventListener("load", beginrefresh, false)
+else if (window.attachEvent)
+	window.attachEvent("load", beginrefresh)
+
+//-->
+</script>
+</center>
