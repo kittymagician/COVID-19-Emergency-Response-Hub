@@ -1,20 +1,71 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<title>Community Emergency Response Hub</title>
-<div class="formwrapper">
-  <center>
-  <h2 class="title">Welcome to the Community Emergency Response Hub.</h2>
-  <br>
-  <p>Here you can request community support for medical and food supplies as well as emotional support callbacks.</p>
-  <a href="/hub/food" class="btn btn-warning">Food</a>&nbsp;<a href="/hub/medicine" class="btn btn-danger">Medicine</a>&nbsp;<a href="/hub/emotionalsupport" class="btn btn-primary">Emotional Support</a>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <p><a href="/member_page">Volenteer Login</a> | <a href="/gdpr">GDPR/Privacy Policy</a></p>
-  </center>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css">
+  <title>Community Emergency Response Hub</title>
+</head>
+
+<div class="menuBase">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col d-flex align-items-center">
+        <a href="/member_page"><button class="volLogin">Volenteer Login</button></a>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+        <h1 class="title">Welcome to the Community Emergency Response Hub.</h1>
+        <h2 class="subTitle">Here you can request community support for medical and food supplies as well as emotional support callbacks.</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-4 mb-3">
+      <a href="/hub/food">
+      <div class="card text-white bg-primary">
+          <div class="card-body">
+            icon will go here
+            <h5 class="card-title">Food</h5>
+          </div>
+      </div>
+    </a>
+    </div>
+    <div class="col-12 col-md-4 mb-3">
+      <a href="/hub/medicine">
+      <div class="card text-white bg-warning">
+          <div class="card-body">
+            icon will go here
+            <h5 class="card-title">Medicine</h5>
+          </div>
+      </div>
+    </a>
+    </div>
+    <div class="col-12 col-md-4 mb-3">
+      <a href="/hub/emotionalsupport">
+      <div class="card text-white bg-danger">
+          <div class="card-body">
+            icon will go here
+            <h5 class="card-title">Emotional Support</h5>
+          </div>
+      </div>
+    </a>
+    </div>
+  </div>
+</div>
+
+
+<!--   <a href="/hub/food" class="btn btn-warning">Food</a>&nbsp;<a href="/hub/medicine" class="btn btn-danger">Medicine</a>&nbsp;<a href="/hub/emotionalsupport" class="btn btn-primary">Emotional Support</a>
+
+  <p><a href="/member_page">Volenteer Login</a> | <a href="/gdpr">GDPR/Privacy Policy</a></p> -->
+
 
 </html>

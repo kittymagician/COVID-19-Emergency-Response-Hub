@@ -1,0 +1,67 @@
+html body {
+
+	font-family: 'Karla', sans-serif;
+}
+
+.container-fluid {
+
+	max-width: 1440px;
+}
+
+/* MENU */
+
+.menuBase {
+
+	height: 60px;
+	background-color: #dcdde1;
+}
+
+.volLogin {
+
+	position: relative;
+	width: 200px;
+	height: 45px;
+	border-radius: 3px;
+	background-color: white;
+	border: none;
+	float: right;
+}
+
+/* Generic Styles */
+
+h1 {
+
+	font-size: 24px;
+	font-weight: normal;
+	line-height: 28px;
+
+}
+
+h2 {
+
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 24px;
+}
+
+/* Default */
+
+.title {
+
+	margin-top: 40px;
+	text-align: center;
+}
+
+.subTitle {
+
+	margin-top: 40px;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.card {
+
+	height: 160px;
+	text-align: center;
+	border: none;
+}
