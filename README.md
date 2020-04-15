@@ -15,7 +15,7 @@ web pages call out to a CDN for Bootstrap, Cloudflare CDN for fontawesome icons 
 See the installation guide on the [Wiki](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/wiki/Installation)
 
 # Screenshots
-![Home Screen](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/Screenshot 2020-04-16 at 00.44.23.png)
+![Home Screen](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/home.png)
 
 # With Thanks
 
