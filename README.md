@@ -15,6 +15,14 @@ See the installation guide on the [Wiki](https://github.com/kittymagician/COVID-
 
 # With Thanks
 
-Joel Graham - joelagraham.co.uk - Web Interface Redesign
+Joel Graham - [joelagraham.co.uk](http://joelgraham.co.uk) - front end redesign
 
-Armin Ronacher - For building Flask! 
+KittyMagician - [kittymagician.com](https://kittymagician.com) - Backend and original front end design. 
+
+Armin Ronacher - For building [https://flask.palletsprojects.com/en/1.1.x/](flask)! (the micro web framework this web app uses.)
+
+Matthew Holt - For founding [https://caddyserver.com/](Caddy) (a super simple web server with https by default.)
+
+Benoit Chesneau - For founding [https://gunicorn.org/](gunicorn) (for building a WSGI that can interface with Caddy.)
+
+Thank you to the millions of developers around the world working on open source projects.
