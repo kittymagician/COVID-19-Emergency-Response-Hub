@@ -19,10 +19,10 @@ Joel Graham - [joelagraham.co.uk](http://joelgraham.co.uk) - front end redesign
 
 KittyMagician - [kittymagician.com](https://kittymagician.com) - Backend and original front end design. 
 
-Armin Ronacher - For building [https://flask.palletsprojects.com/en/1.1.x/](flask)! (the micro web framework this web app uses.)
+Armin Ronacher - For founding [flask](https://flask.palletsprojects.com/en/1.1.x/) (the micro web framework this web app uses.)
 
-Matthew Holt - For founding [https://caddyserver.com/](Caddy) (a super simple web server with https by default.)
+Matthew Holt - For founding [Caddy](https://caddyserver.com) (a super simple web server with https by default.)
 
-Benoit Chesneau - For founding [https://gunicorn.org/](gunicorn) (for building a WSGI that can interface with Caddy.)
+Benoit Chesneau - For founding [gunicorn](https://gunicorn.org) (for building a WSGI that can interface with Caddy.)
 
 Thank you to the millions of developers around the world working on open source projects.
