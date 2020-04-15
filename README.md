@@ -6,7 +6,7 @@ The application supports requests for food, medicine and emotional support.
 
 # Dependencies 
 
-Flask, Flask-WTF, flask-sqlalchemy, flask-user, twilio, web pages call out to a CDN for Bootstrap.
+Flask, Flask-WTF, flask-sqlalchemy, flask-user, twilio, web pages call out to a CDN for Bootstrap and Cloudflare CDN for fontawesome icons.
 
 # Installation
 
