@@ -4,6 +4,7 @@ import sqlite3
 from flask import Flask, render_template_string, request, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_user import login_required, UserManager, UserMixin
+from twilio.twiml.voice_response import Gather, VoiceResponse, Say
 from twilio.twiml.messaging_response import MessagingResponse
 from twilio.rest import Client
 from flask_wtf import FlaskForm
@@ -18,6 +19,7 @@ twilio_number = "Twilio Registered Number goes here." # The twilio SMS number yo
 default_resp = "I have forwarded on your request to the community support team"
 fallback_resp = "Welcome to the Emergency Response SMS bot. What do you need support with? Say Food Shopping for Food Shopping, Mediciation for Medication, emotional support call for emotional support phone call."
 now = datetime.datetime.now()
+locale = "en-GB" # Text to speech and speech to text language for Twilio.
 
 class MyForm(FlaskForm):
     telephonenumber = StringField('telephone number', validators=[DataRequired(), Length(max=40)])
@@ -50,8 +52,8 @@ class ConfigClass(object):
     USER_ENABLE_EMAIL = False      # Disable email authentication
     USER_ENABLE_USERNAME = True    # Enable username authentication
     USER_REQUIRE_RETYPE_PASSWORD = True    # Simplify register form
-    USER_ENABLE_REGISTER = False #set to True to register your username but set this to False afterwards!
-    USER_CORPORATION_NAME = "KittyMagician" # change to your own brand name.
+    USER_ENABLE_REGISTER = True #set to True to register your username but set this to False afterwards!
+    USER_CORPORATION_NAME = "COVID-19 Emergency Response Hub" # change to your own brand name.
     
 def create_app():
     """ Flask application factory """
@@ -126,23 +128,31 @@ def create_app():
       c.execute('SELECT count(*) AS \"webstatus\" FROM smsreport WHERE status = \"open\"')
       smsreport = c.fetchone()
       sms = smsreport[0]
+      c.execute('SELECT count(*) AS \"phonestatus\" FROM phonereport WHERE status = \"open\"')
+      phonereport = c.fetchone()
+      phone = phonereport[0]
       c.execute('select count(*) AS \"webstatusclosed\" FROM webreport WHERE status = \"close\"')
       closedweb = c.fetchone()
-      print(closedweb)
       cweb = closedweb[0]
       c.execute('select count(*) AS \"smsstatusclosed\" FROM smsreport WHERE status = \"close\"')
       closedsms = c.fetchone()
       csms = closedsms[0]
-      closed = cweb + csms
+      c.execute('select count(*) AS \"phonestatusclosed\" FROM phonereport WHERE status = \"close\"')
+      closedphone = c.fetchone()
+      cphone = closedsms[0]
+      closed = cweb + csms + cphone
       c.execute('select count(*) AS \"webstatusassigned\" FROM webreport WHERE status = \"assigned\"')
       assignedweb = c.fetchone()
       aweb = assignedweb[0]
-      c.execute('select count(*) AS \"webstatusassigned\" FROM smsreport WHERE status = \"assigned\"')
+      c.execute('select count(*) AS \"smsstatusassigned\" FROM smsreport WHERE status = \"assigned\"')
       assignedsms = c.fetchone()
       asms = assignedsms[0]
-      assigned = aweb + asms
+      c.execute('select count(*) AS \"phonestatusassigned\" FROM phonereport WHERE status = \"assigned\"')
+      assignedphone = c.fetchone()
+      aphone = assignedphone[0]
+      assigned = aweb + asms + aphone
       conn.close()
-      return render_template('dashboard.html', webreport = web, sms = sms, closed = closed, assigned=assigned)
+      return render_template('dashboard.html', web = web, sms = sms, phone = phone, closed = closed, assigned=assigned)
     @app.route("/reportcenter/full")
     @login_required
     def fullreport():
@@ -152,7 +162,9 @@ def create_app():
       items = c.fetchall()
       c.execute("SELECT * FROM smsreport")
       smsitems = c.fetchall()
-      return render_template('fullreport.html', items=items, smsitems=smsitems)
+      c.execute("SELECT * FROM phonereport")
+      phoneitems = c.fetchall()
+      return render_template('fullreport.html', items=items, smsitems=smsitems, phoneitems=phoneitems)
     @app.route("/reportcenter/open")
     @login_required
     def openreport():
@@ -162,8 +174,10 @@ def create_app():
       web = c.fetchall()
       c.execute('SELECT ID, telephone number, category, message, status FROM smsreport WHERE status = \"open\"')
       sms = c.fetchall()
-      c.close()
-      return render_template('openreport.html', sms=sms, web=web)
+      c.execute('SELECT ID, telephone number, category, message, status FROM phonereport WHERE status = \"open\"')
+      phone = c.fetchall()
+      conn.close()
+      return render_template('openreport.html', sms=sms, web=web, phone=phone)
     @app.route("/reportcenter/assigned")
     @login_required
     def assignedreport():
@@ -173,8 +187,10 @@ def create_app():
       web = c.fetchall()
       c.execute('SELECT ID, telephone number, category, message, status FROM smsreport WHERE status = \"assigned\"')
       sms = c.fetchall()
-      c.close()
-      return render_template('assignedreport.html', sms=sms, web=web)
+      c.execute('SELECT ID, telephone number, category, message, status FROM phonereport WHERE status = \"assigned\"')
+      phone = c.fetchall()
+      conn.close()
+      return render_template('assignedreport.html', sms=sms, web=web, phone=phone)
     @app.route("/reportcenter/web/close/<int:id>")
     @login_required
     def closereport(id):
@@ -223,7 +239,31 @@ def create_app():
         conn.close()
         return redirect(url_for('assignedreport'))
       except:
-        return 'This case has already been assigned.'      
+        return 'This case has already been assigned.'
+    @app.route("/reportcenter/sms/close/<int:id>")
+    @login_required
+    def phoneclosereport(id):
+      conn = sqlite3.connect('hubapp.sqlite')
+      c = conn.cursor()
+      try:
+        c.execute("UPDATE phonereport SET status = ? WHERE ID = ?", ('close', id))
+        conn.commit()
+        conn.close()
+        return redirect(url_for('openreport'))
+      except:
+        return 'This case has already been closed.'
+    @app.route("/reportcenter/sms/assign/<int:id>")
+    @login_required
+    def phoneassignreport(id):
+      conn = sqlite3.connect('hubapp.sqlite')
+      c = conn.cursor()
+      try:
+        c.execute("UPDATE phonereport SET status = ? WHERE ID = ?", ('assigned', id))
+        conn.commit()
+        conn.close()
+        return redirect(url_for('assignedreport'))
+      except:
+        return 'This case has already been assigned.'
     @app.route("/gdpr")
     def gdpr():
       return render_template('gdpr.html')
@@ -317,9 +357,78 @@ def create_app():
         conn.commit()
         conn.close()
         return str(resp)
+    @app.route("/voice", methods=['GET', 'POST'])
+    def voiceresponse():
+      response = VoiceResponse()
+      gather = Gather(input='speech', action='/voice/selection', language=locale)
+      gather.say('Welcome to the Emergency Response Hub, Please say out loud one of the following three options. food. medication. and finally. emotional support. if you need your prescriptions picked up say medication. If you need food say food. if you need an emotional support chat say emotional support.', voice='alice', language=locale)
+      response.append(gather)
+      return str(response)
+    @app.route("/voice/selection", methods=['GET', 'POST'])
+    def selection():
+      speech = request.values.get('SpeechResult')
+      caller = request.values.get('Caller')
+      response = VoiceResponse()
+      if speech == 'food':
+        gather = Gather(input='speech', action='/voice/food', language=locale)
+        gather.say("Please say what food you require. For example baked beans.", voice='alice', language=locale)
+        response.append(gather)
+      elif speech == 'medication':
+        gather = Gather(input='speech', action='/voice/medication', language=locale)
+        gather.say("Please say the medication you require.", voice='alice', language=locale)
+        response.append(gather)
+      elif speech == 'emotional support':
+        if caller != None:
+          conn = sqlite3.connect('hubapp.sqlite')
+          c = conn.cursor()
+          response.say('You said you need emotional support. One of our volunteers will be in touch soon. In the meantime if you want to talk to someone immediately please contact Samaritans at 1. 1. 6.  1. 2. 3. The Lines are open 24 hours a day 7 days a week.', voice='alice', language=locale)
+          response.say('Thank you for calling. Goodbye.', voice='alice', language=locale)
+          speech = "requires emotional support callback."
+          c.execute("insert into phonereport values (?, ?, ?, ?, ?)", (None, caller, 'emotional support', speech, 'open'))
+          conn.commit()
+          conn.close()
+          response.hangup()
+        else:
+          response.say('Unfortauntely your caller ID has been witheald. We are unable to process your emotional support request unless we are able to get your caller ID. However you can call Samaritans for free at 1. 1. 6.  1. 2. 3.')
+      else:
+        response.say('I\'m sorry, I was unable to identify what you said. Please call back or alternatively text this number your request. Goodbye!', voice='alice', language=locale)
+        response.hangup()
+      return str(response)
+    @app.route("/voice/medication", methods=['GET', 'POST'])
+    def phonemedication():
+      speech = request.values.get('SpeechResult')
+      caller = request.values.get('Caller')
+      response = VoiceResponse()
+      if caller != None:
+        conn = sqlite3.connect('hubapp.sqlite')
+        c = conn.cursor()
+        c.execute("insert into phonereport values (?, ?, ?, ?, ?)", (None, caller, 'medication', speech, 'open'))
+        response.say('I have notified the team that you require the following medication: ' + speech, voice='alice', language=locale)
+        response.say('They will be in contact soon. Thank you for calling. Goodbye!', voice='alice', language=locale)
+        conn.commit()
+        conn.close()
+      else:
+        response.say('Unfortunately I am unable to process your call as you are witholding your caller id. You can either disable your caller ID or use our online service. Thank You, Goodbye.')
+      return str(response)
+    @app.route("/voice/food", methods=['GET', 'POST'])
+    def phonefood():
+      speech = request.values.get('SpeechResult')
+      caller = request.values.get('Caller')
+      response = VoiceResponse()
+      if caller != None:
+        conn = sqlite3.connect('hubapp.sqlite')
+        c = conn.cursor()
+        c.execute("insert into phonereport values (?, ?, ?, ?, ?)", (None, caller, 'food', speech, 'open'))
+        response.say('I have notified the team that you require the following: ' + speech, voice='alice', language=locale)
+        response.say('they will be in contact soon. Thank you for calling. Goodbye!', voice='alice', language=locale)
+        conn.commit()
+        conn.close()
+      else:
+        response.say('Unfortunately I am unable to process your call as you are witholding your caller id. You can either disable your caller ID or use our online service. Thank You, Goodbye.')
+      return str(response)
     return app
 app = create_app()
 
 # Start development web server
 if __name__=='__main__':
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    app.run(host='0.0.0.0', port=3000, debug=False)

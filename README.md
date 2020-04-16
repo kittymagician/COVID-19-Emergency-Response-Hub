@@ -19,7 +19,7 @@ See the installation guide on the [Wiki](https://github.com/kittymagician/COVID-
 
 # With Thanks
 
-Joel Graham - [joelagraham.co.uk](http://joelgraham.co.uk) - front end redesign
+Joel Graham - [joelagraham.co.uk](http://joelagraham.co.uk) - front end redesign
 
 KittyMagician - [kittymagician.com](https://kittymagician.com) - Backend and original front end design. 
 

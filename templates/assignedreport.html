@@ -44,3 +44,24 @@
 </td>
 {% endfor %}
 </table>
+<h3>Assigned Phone Reports</h3>
+<table class="table table-bordered">
+<thead>
+      <tr>
+        <th>Edit</th>
+	<th>Telephone Number</th>
+        <th>Request Category</th>
+        <th>Message</th>
+        <th>Status</th>
+      </tr>
+</thead>
+{% for item in phone %}
+<tr>
+    <td><a class="btn btn-outline-danger" href="/reportcenter/phone/close/{{item[0]}}" role="button">Close</a></td>
+    <td>{{item[1]}}</td>
+    <td>{{item[2]}}</td>
+    <td>{{item[3]}}</td>
+    <td>{{item[4]}}</td>
+</td>
+{% endfor %}
+</table>
