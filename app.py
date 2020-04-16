@@ -240,7 +240,7 @@ def create_app():
         return redirect(url_for('assignedreport'))
       except:
         return 'This case has already been assigned.'
-    @app.route("/reportcenter/sms/close/<int:id>")
+    @app.route("/reportcenter/phone/close/<int:id>")
     @login_required
     def phoneclosereport(id):
       conn = sqlite3.connect('hubapp.sqlite')
@@ -252,7 +252,7 @@ def create_app():
         return redirect(url_for('openreport'))
       except:
         return 'This case has already been closed.'
-    @app.route("/reportcenter/sms/assign/<int:id>")
+    @app.route("/reportcenter/phone/assign/<int:id>")
     @login_required
     def phoneassignreport(id):
       conn = sqlite3.connect('hubapp.sqlite')
