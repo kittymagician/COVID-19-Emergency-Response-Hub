@@ -2,7 +2,13 @@
 
 The Community Response Hub was designed after realising that Parish Councils do not have a case mangement/ticket submission system.
 
-The application supports requests for food, medicine and emotional support.
+The application supports requests for food, medicine and emotional support via the web interface, sms and telephone (sms and telephone services use the Twilio platform).
+
+- SMS: a simple chatbot that accepts requests and relays them via sms and the report center.
+
+- Phone: text to speech and speech to text bot that processes requests and relays them to the report center
+
+- Web: Web forms that relay the data to the report center.
 
 # Dependencies 
 
