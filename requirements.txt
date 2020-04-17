@@ -1,0 +1,4 @@
+Flask==1.0.2
+Flask-User==1.0.2.2
+Flask-SQLAlchemy==2.4.1
+twilio==6.19.2
