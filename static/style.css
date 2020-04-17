@@ -89,6 +89,27 @@ h2 {
 	margin-top: 35px;
 }
 
+.dashMenu ul {
+
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	margin-top: 40px;
+	bottom: 0px;
+}
+
+.dashMenu li {
+
+	list-style-type: none;
+}
+
+
+.dashMenu ul li a {
+
+	color: white !important;
+	font-size: 16px;
+}
+
 .dashMain h1 {
 
 	color: #2F3640;
@@ -99,4 +120,41 @@ h2 {
 
 	color: #747D8C;
 	font-size: 14px;
+}
+
+.dashStats {
+
+	margin: 20px;
+	border: 2px solid #F1F2F6;
+	border-radius: 3px;
+	padding: 0px;
+	width: 280px;
+	max-width: 280px;
+}
+
+.dashStats h1 {
+
+	margin-top: 30px;
+	margin-left: 25px;
+	margin-bottom: 20px;
+	color: #2F3640;
+	font-size: 36px;
+}
+
+.dashStats h2 {
+
+	color: #2F3640;
+	position: relative;
+	margin-left: 25px;
+	font-size: 20px;
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+.dashStats p {
+
+	color: #747D8C;
+	font-size: 14px;
+	margin-left: 25px;
+
 }
