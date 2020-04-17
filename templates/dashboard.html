@@ -15,10 +15,10 @@
 		<div class="row">
 			<div class="col">
 				<ul class="list-inline">
-					<li class="list-inline-item"><a class="active">Your Dashboard</a></li>
-					<li class="list-inline-item"><a>Open Reports</a></li>
-					<li class="list-inline-item"><a>Full Reports</a></li>
-					<li class="list-inline-item"><a>Sign out</a></li>
+					<li class="list-inline-item"><a class="active" href="#">Your Dashboard</a></li>
+					<li class="list-inline-item"><a href="openreport.html">Open Reports</a></li>
+					<li class="list-inline-item"><a href="fullreport.html">Full Reports</a></li>
+					<li class="list-inline-item"><a href="{{ url_for('user.logout') }}">Sign out</a></li>
 				</ul>
 			</div>
 		</div>
@@ -71,7 +71,7 @@
 </div>
 
 
-<p><a href={{ url_for('member_page') }}>Volenteer Hub</a></p><p><a href={{ url_for('user.logout') }}>Sign out</a></p> -->
+<p><a href={{ url_for('member_page') }}>Volenteer Hub</a></p>
 
 <script>
 <!--
