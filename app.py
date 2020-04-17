@@ -52,7 +52,7 @@ class ConfigClass(object):
     USER_ENABLE_EMAIL = False      # Disable email authentication
     USER_ENABLE_USERNAME = True    # Enable username authentication
     USER_REQUIRE_RETYPE_PASSWORD = True    # Simplify register form
-    USER_ENABLE_REGISTER = True #set to True to register your username but set this to False afterwards!
+    USER_ENABLE_REGISTER = False #set to True to register your username but set this to False afterwards!
     USER_CORPORATION_NAME = "COVID-19 Emergency Response Hub" # change to your own brand name.
     
 def create_app():
