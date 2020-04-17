@@ -65,3 +65,38 @@ h2 {
 	text-align: center;
 	border: none;
 }
+
+
+
+
+/* 
+------------------
+	DASHBOARD
+------------------
+ */
+
+
+.dashMenu {
+
+	background-color: #5352ED;
+	min-height: 140px;
+	min-width: 100vw;
+}
+
+.dashMenu h1 {
+
+	color: white;
+	margin-top: 35px;
+}
+
+.dashMain h1 {
+
+	color: #2F3640;
+	margin-top: 60px;
+}
+
+.dashmain p {
+
+	color: #747D8C;
+	font-size: 14px;
+}
