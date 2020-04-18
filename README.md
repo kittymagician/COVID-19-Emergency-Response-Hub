@@ -14,7 +14,7 @@ The application supports requests for food, medicine and emotional support via t
 
 Flask, Flask-WTF, flask-sqlalchemy, flask-user, twilio
 
-web pages call out to a CDN for Bootstrap, Cloudflare CDN for fontawesome icons and Google CDN for font.
+web pages call out to the stackpath CDN for Bootstrap, Cloudflare CDN for fontawesome icons, JQuery and DataTables and Google CDN for font.
 
 # Installation
 
@@ -23,7 +23,7 @@ See the installation guide on the [Wiki](https://github.com/kittymagician/COVID-
 # Screenshots
 ![Home Screen](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/home.png)
 ![Dashboard](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/dashboard.png)
-
+![Full Report](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/fullreport.png)
 # With Thanks
 
 Joel Graham - [joelagraham.co.uk](http://joelagraham.co.uk) - front end redesign
