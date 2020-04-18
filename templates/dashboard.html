@@ -2,6 +2,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" rel="stylesheet">
 	<link rel="stylesheet" href="../static/style.css">
 	<title>Dashboard - CERH</title>
 
@@ -9,15 +10,17 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<h1>Welcome Back, Joel.</h1>
+				<h1>Welcome Back, {{ current_user.username }}</h1>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
 				<ul class="list-inline">
 					<li class="list-inline-item"><a class="active" href="#">Your Dashboard</a></li>
-					<li class="list-inline-item"><a href="openreport.html">Open Reports</a></li>
-					<li class="list-inline-item"><a href="fullreport.html">Full Reports</a></li>
+					<li class="list-inline-item"><a href="{{ url_for('openreport') }}">Open Reports</a></li>
+					<li class="list-inline-item"><a href="{{ url_for('assignedreport') }}">Assigned Reports</a></li>
+					<li class="list-inline-item"><a href="{{ url_for('fullreport') }}">Full Reports</a></li>
+					<li class="list-inline-item"><a href="{{ url_for('member_page') }}">Volunteer Hub</a></li>
 					<li class="list-inline-item"><a href="{{ url_for('user.logout') }}">Sign out</a></li>
 				</ul>
 			</div>
@@ -42,36 +45,35 @@
 	<div class="row">
 		<div class="col-12 col-md-4 dashStats" style="margin-left: 15px;">
 			<h2>Open Web Cases</h2>
-			<p>Lorem Ipsum</p>
+			<p><i class="fas fa-desktop"></i></p>
 			<h1>{{ web }}</h1>
 		</div>
 		<div class="col-12 col-md-4 dashStats">
 			<h2>Open SMS Cases</h2>
-			<p>Lorem Ipsum</p>
+			<p><i class="fas fa-mobile-alt"></i></p>
 			<h1>{{ sms }}</h1>
 		</div>
 		<div class="col-12 col-md-4 dashStats">
 			<h2>Open Phone Cases</h2>
-			<p>Lorem Ipsum</p>
+			<p><i class="fas fa-phone-square-alt"></i></p>
 			<h1>{{ phone }}</h1>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-12 col-md-4 dashStats" style="margin-left: 15px;">
 			<h2>Assigned Cases</h2>
-			<p>Lorem Ipsum</p>
+			<p><i class="fas fa-phone-square-alt"></i></p>
 			<h1>{{ assigned }}</h1>
 		</div>
 		<div class="col-12 col-md-4 dashStats">
 			<h2>Closed Cases</h2>
-			<p>Lorem Ipsum</p>
+			<p><i class="far fa-window-close"></i></p>
 			<h1>{{ closed }}</h1>
 		</div>
 	</div>
 </div>
 
 
-<p><a href={{ url_for('member_page') }}>Volenteer Hub</a></p>
 
 <script>
 <!--
