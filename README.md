@@ -22,6 +22,7 @@ See the installation guide on the [Wiki](https://github.com/kittymagician/COVID-
 
 # Screenshots
 ![Home Screen](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/home.png)
+![Dashboard](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/dashboard.png)
 
 # With Thanks
 
