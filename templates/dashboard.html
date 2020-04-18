@@ -1,25 +1,77 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<center>
-<h2>Dashboard - Community Emergency Response Hub</h2>
-<br>
-<h1>Open Cases - Web</h1>
-  <h2>{{ web }}</h2>
-<br>
-<h1>Open Cases - SMS</h1>
-<h2>{{ sms }}</h2>
-<br>
-<h1>Open Cases - Phone</h1>
-<h2>{{ phone }}</h2>
-<br>
-<h1>Assigned Cases</h1>
-	<h2>{{ assigned }}</h2>
-<br>
-<h1>Closed Cases</h1>
-	<h2>{{ closed }}</h2>
-<p>Last Updated Date/Time: <span id="datetime"></span></p>
-<br>
-<p><a href={{ url_for('member_page') }}>Volenteer Hub</a></p><p><a href={{ url_for('user.logout') }}>Sign out</a></p>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../static/style.css">
+	<title>Dashboard - CERH</title>
+
+<div class="dashMenu">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<h1>Welcome Back, Joel.</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<ul class="list-inline">
+					<li class="list-inline-item"><a class="active" href="#">Your Dashboard</a></li>
+					<li class="list-inline-item"><a href="openreport.html">Open Reports</a></li>
+					<li class="list-inline-item"><a href="fullreport.html">Full Reports</a></li>
+					<li class="list-inline-item"><a href="{{ url_for('user.logout') }}">Sign out</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col dashMain">
+			<h1>Your Dashboard</h1>
+			<p>Last Updated:<span id="datetime"></span></p>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12 col-md-4 dashStats" style="margin-left: 15px;">
+			<h2>Open Web Cases</h2>
+			<p>Lorem Ipsum</p>
+			<h1>{{ web }}</h1>
+		</div>
+		<div class="col-12 col-md-4 dashStats">
+			<h2>Open SMS Cases</h2>
+			<p>Lorem Ipsum</p>
+			<h1>{{ sms }}</h1>
+		</div>
+		<div class="col-12 col-md-4 dashStats">
+			<h2>Open Phone Cases</h2>
+			<p>Lorem Ipsum</p>
+			<h1>{{ phone }}</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 col-md-4 dashStats" style="margin-left: 15px;">
+			<h2>Assigned Cases</h2>
+			<p>Lorem Ipsum</p>
+			<h1>{{ assigned }}</h1>
+		</div>
+		<div class="col-12 col-md-4 dashStats">
+			<h2>Closed Cases</h2>
+			<p>Lorem Ipsum</p>
+			<h1>{{ closed }}</h1>
+		</div>
+	</div>
+</div>
+
+
+<p><a href={{ url_for('member_page') }}>Volenteer Hub</a></p>
 
 <script>
 <!--
