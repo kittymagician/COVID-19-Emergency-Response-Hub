@@ -1,6 +1,6 @@
 # COVID-19 Emergency Response Hub
 
-The Community Response Hub was designed after realising that Parish Councils do not have a case mangement/ticket submission system.
+The COVID-19 Response Hub was designed for the community after realising that Parish Councils do not have a case mangement/ticket submission system. This application aims to provide software that is open, free and able to support the community at this difficult time
 
 The application supports requests for food, medicine and emotional support via the web interface, sms and telephone (sms and telephone services use the Twilio platform).
 
@@ -10,7 +10,7 @@ The application supports requests for food, medicine and emotional support via t
 
 - Web: Web forms that relay the data to the report center.
 
-Once the customer has requested the food via the supported channels registered volunteers can login and view the customer's phone number and request as well as assign cases and once completed close them. The Dashboard is a one stop place to view live metrics of cases being processed, assigned and closed.
+Once the customer has requested the food/medicine/emotional support via the supported channels registered volunteers can login and view the customer's phone number and request as well as assign cases and once completed close them. The Dashboard is a one stop place to view live metrics of cases being processed, assigned and closed.
 # Dependencies 
 
 Flask, Flask-WTF, flask-sqlalchemy, flask-user, [twilio](https://www.twilio.com/)
