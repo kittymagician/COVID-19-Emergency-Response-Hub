@@ -10,9 +10,10 @@ The application supports requests for food, medicine and emotional support via t
 
 - Web: Web forms that relay the data to the report center.
 
+Once the customer has requested the food via the supported channels registered volunteers can login and view the customer's phone number and request as well as assign cases and once completed close them. The Dashboard is a one stop place to view live metrics of cases being processed, assigned and closed.
 # Dependencies 
 
-Flask, Flask-WTF, flask-sqlalchemy, flask-user, twilio
+Flask, Flask-WTF, flask-sqlalchemy, flask-user, [twilio](https://www.twilio.com/)
 
 web pages call out to the stackpath CDN for Bootstrap, Cloudflare CDN for fontawesome icons, JQuery and DataTables and Google CDN for font.
 
