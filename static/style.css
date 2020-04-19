@@ -75,6 +75,19 @@ h2 {
 ------------------
  */
 
+ .navbar {
+
+ 	padding: 0px;
+ 	margin: 10px 0px 10px 0px;
+ }
+
+ .navbar-toggler {
+
+ 	background-color: white;
+ 	border-radius: 3px 3px 0px 0px;
+ 	border: none;
+ }
+
 
 .dashMenu {
 
@@ -89,19 +102,11 @@ h2 {
 	margin-top: 35px;
 }
 
-.dashMenu ul {
+ .dashMenu li {
 
-	position: relative;
-	padding: 0px;
-	margin: 0px;
-	margin-top: 35px;
-}
-
-.dashMenu li {
-
-	list-style-type: none;
 	color: white;
-	margin: 0px 30px 0px 0px !important;
+	margin: 20px 0px 0px 0px;
+
 }
 
 
@@ -110,7 +115,10 @@ h2 {
 	font-size: 16px;
 	text-decoration: none;
 	color: white;
+	display: inline-block;
+
 }
+
 
 .active {
 
@@ -118,6 +126,7 @@ h2 {
 	background-color: white;
 	padding: 10px 10px 15px 10px;
 	border-radius: 3px;
+	width: 100%;
 }
 
 .dashMain h1 {
@@ -166,5 +175,51 @@ h2 {
 	color: #747D8C;
 	font-size: 14px;
 	margin-left: 25px;
+
+}
+
+
+
+
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+
+
+}
+
+@media (min-width: 992px) { 
+
+	.dashMenu li {
+
+	color: white;
+	margin: 0px 30px 0px 0px;
+
+	}
+
+	.navbar {
+
+		padding: 0px;
+		margin-top: 35px;
+	}
+
+	.dashMenu a {
+
+	font-size: 16px;
+	text-decoration: none;
+	color: white;
+	display: initial;
+
+	}
+
+
+ }
+
+
+@media (min-width: 1200px) {
+
 
 }
