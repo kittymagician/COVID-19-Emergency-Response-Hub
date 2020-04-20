@@ -41,4 +41,6 @@ Matthew Holt - For founding [Caddy](https://caddyserver.com) (a super simple web
 
 Benoit Chesneau - For founding [gunicorn](https://gunicorn.org) (for building a WSGI that can interface with Caddy.)
 
+Ling Thio - For founding [flask-user](https://github.com/lingthio/Flask-User) (for creating a package that provides a simple way to intergrate Flask-Login and Flask-Security into a project)
+
 Thank you to the millions of developers around the world working on open source projects.
