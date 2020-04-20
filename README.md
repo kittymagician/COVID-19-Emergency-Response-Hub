@@ -13,7 +13,7 @@ The application supports requests for food, medicine and emotional support via t
 Once the customer has requested the food/medicine/emotional support via the supported channels registered volunteers can login and view the customer's phone number and request as well as assign cases and once completed close them. The Dashboard is a one stop place to view live metrics of cases being processed, assigned and closed.
 # Dependencies 
 
-Flask, Flask-WTF, flask-sqlalchemy, flask-user, [twilio](https://www.twilio.com/)
+Flask, Flask-WTF, flask-sqlalchemy, flask-user, flask-talisman, flask-login and [twilio](https://www.twilio.com/) to name a [few!](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/requirements.txt)
 
 web pages call out to the stackpath CDN for Bootstrap, Cloudflare CDN for fontawesome icons, JQuery and DataTables and Google CDN for font.
 
@@ -25,6 +25,10 @@ See the installation guide on the [Wiki](https://github.com/kittymagician/COVID-
 ![Home Screen](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/home.png)
 ![Dashboard](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/dashboard.png)
 ![Full Report](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/fullreport.png)
+
+# Licence
+See `LICENSE` for further information.
+
 # With Thanks
 
 Joel Graham - [joelagraham.co.uk](http://joelagraham.co.uk) - front end redesign
