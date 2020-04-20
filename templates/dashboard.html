@@ -93,7 +93,7 @@
 
 
 
-<script>
+<script nonce="{{ csp_nonce() }}">
 var dt = new Date();
 document.getElementById("datetime").innerHTML = dt.toLocaleString();
 //enter refresh time in "minutes:seconds" Minutes should range from 0 to inifinity. Seconds should range from 0 to 59

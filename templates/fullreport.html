@@ -70,7 +70,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/jquery.dataTables.js" integrity="sha256-Q0cguHZIfvl0zzk68PF1dGCY3pW2y6xvHx4GHLQ/lg4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/dataTables.bootstrap4.js" integrity="sha256-62excPUE/GPVVyqdVMWPt/2Stm18dLZSoPGH3PFPZJs=" crossorigin="anonymous"></script>
-<script>
+<script nonce="{{ csp_nonce() }}">
 $(document).ready(function () {
   $('#phonereport').DataTable();
   $('#smsreport').DataTable();

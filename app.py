@@ -10,6 +10,7 @@ from twilio.rest import Client
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, Length
+from flask_talisman import Talisman
 
 account_sid = "Twilio SID goes here" #Twilio SID 
 auth_token  = "Twilio Auth Token goes here" #Twilio Auth Token
@@ -40,7 +41,12 @@ class EmotionalForm(FlaskForm):
 class ConfigClass(object):
     """ Flask application config """
     # Flask settings
-    SECRET_KEY = str(os.urandom(16))
+    SECRET_KEY = str(os.urandom(255))
+    SESSION_COOKIE_SECURE = True
+    REMEMBER_COOKIE_SECURE = True
+    SESSION_COOKIE_HTTPONLY = True
+    SESSION_COOKIE_SAMESITE='Lax'
+    SESSION_COOKIE_NAME = "__secure"
 
     # Flask-SQLAlchemy settings
     SQLALCHEMY_DATABASE_URI = 'sqlite:///hubapp.sqlite'    # File-based SQL database
@@ -61,7 +67,26 @@ def create_app():
     # Create Flask app load app.config
     app = Flask(__name__)
     app.config.from_object(__name__+'.ConfigClass')
-
+    # Security Headers
+    csp = {
+        'default-src': '\'self\'',
+        'style-src':  '\'unsafe-inline\' \'self\' bootstrapcdn.com *.bootstrapcdn.com cloudflare.com *.cloudflare.com googleapis.com *.googleapis.com',
+        'script-src': '\'unsafe-eval\' \'self\' bootstrapcdn.com *.bootstrapcdn.com cloudflare.com *.cloudflare.com googleapis.com *.googleapis.com jquery.com *.jquery.com',
+        'font-src': 'cloudflare.com *.cloudflare.com gstatic.com *.gstatic.com bootstrapcdn.com *.bootstrapcdn.com',
+        'img-src': '\'self\' data:'
+    }
+    feature_policy = {
+        'geolocation': '\'none\'',
+        'accelerometer': '\'none\'',
+        'camera': '\'none\'',
+        'geolocation': '\'none\'',
+        'gyroscope': '\'none\'',
+        'magnetometer': '\'none\'',
+        'microphone': '\'none\'',
+        'payment': '\'none\'',
+        'usb': '\'none\''
+    }
+    Talisman(app, content_security_policy=csp, feature_policy=feature_policy, content_security_policy_nonce_in=['script-src'])
     # Initialize Flask-SQLAlchemy
     db = SQLAlchemy(app)
 
