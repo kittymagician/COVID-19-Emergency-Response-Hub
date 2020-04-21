@@ -70,8 +70,8 @@ def create_app():
     # Security Headers
     csp = {
         'default-src': '\'self\'',
-        'style-src':  '\'unsafe-inline\' \'self\' bootstrapcdn.com *.bootstrapcdn.com cloudflare.com *.cloudflare.com googleapis.com *.googleapis.com',
-        'script-src': '\'unsafe-eval\' \'self\' bootstrapcdn.com *.bootstrapcdn.com cloudflare.com *.cloudflare.com googleapis.com *.googleapis.com jquery.com *.jquery.com',
+        'style-src':  '\'unsafe-inline\' \'self\' bootstrapcdn.com *.bootstrapcdn.com cloudflare.com *.cloudflare.com googleapis.com *.googleapis.com jsdelivr.net *.jsdelivr.net',
+        'script-src': '\'unsafe-eval\' \'self\' bootstrapcdn.com *.bootstrapcdn.com cloudflare.com *.cloudflare.com googleapis.com *.googleapis.com jquery.com *.jquery.com jsdelivr.net *.jsdelivr.net',
         'font-src': 'cloudflare.com *.cloudflare.com gstatic.com *.gstatic.com bootstrapcdn.com *.bootstrapcdn.com',
         'img-src': '\'self\' data:'
     }

@@ -5,10 +5,10 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous"> 
-  <link rel="stylesheet" href="../static/style.css">
+ <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"/> 
+ <link rel="stylesheet" href="../static/style.css">
   <title>Community Emergency Response Hub</title>
 </head>
-
 <div class="menuBase">
   <div class="container-fluid">
     <div class="row">
@@ -42,7 +42,7 @@
     </div>
     <div class="col-12 col-md-4 mb-3">
       <a href="/hub/medicine">
-      <div class="card text-white bg-warning">
+      <div class="card text-white bg-success">
           <div class="card-body">
             <i class="fas fa-prescription-bottle-alt"></i>
             <h5 class="card-title">Medicine</h5>
@@ -63,7 +63,20 @@
   </div>
 </div>
 
- <center><p><a href="/member_page">Volunteer Login</a> | <a href="/gdpr">GDPR/Privacy Policy</a></p></center>
+<center><p><a href="/member_page">Volunteer Login</a> | <a href="/gdpr">GDPR/Privacy Policy</a></p></center>
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script nonce="{{ csp_nonce() }}">
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+   },
+   "button": {
+     "background": "#f1d600"
+     }
+   },
+   "position": "top",
+   "static": true
+});
+</script>
 
-
-</html>

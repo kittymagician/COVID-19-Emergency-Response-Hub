@@ -15,7 +15,7 @@ Once the customer has requested the food/medicine/emotional support via the supp
 
 Flask, Flask-WTF, flask-sqlalchemy, flask-user, flask-talisman, flask-login and [twilio](https://www.twilio.com/) to name a [few!](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/requirements.txt)
 
-web pages call out to the stackpath CDN for Bootstrap, Cloudflare CDN for fontawesome icons, JQuery and DataTables and Google CDN for font.
+web pages call out to the stackpath CDN for Bootstrap, Cloudflare CDN for fontawesome icons, JQuery and DataTables and Google CDN for font and jsdelivr for [Cookie Consent](https://github.com/osano/cookieconsent)
 
 # Installation
 
@@ -42,5 +42,7 @@ Matthew Holt - For founding [Caddy](https://caddyserver.com) (a super simple web
 Benoit Chesneau - For founding [gunicorn](https://gunicorn.org) (for building a WSGI that can interface with Caddy.)
 
 Ling Thio - For founding [flask-user](https://github.com/lingthio/Flask-User) (for creating a package that provides a simple way to intergrate Flask-Login and Flask-Security into a project)
+
+Osano - For developing [cookie consent](https://github.com/osano/cookieconsent) (a open source cookie consent banner)
 
 Thank you to the millions of developers around the world working on open source projects.
