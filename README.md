@@ -22,12 +22,24 @@ web pages call out to the stackpath CDN for Bootstrap, Cloudflare CDN for fontaw
 See the installation guide on the [Wiki](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/wiki/Installation)
 
 # Screenshots
-![Home Screen](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/home.png)
-![Dashboard](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/dashboard.png)
+![Home Screen](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/releasev1/home.png)
+![Dashboard](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots//releasev1dashboard.png)
 ![Full Report](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/fullreport.png)
+![Food](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/releasev1/food.png)
+![Medicine](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/releasev1/medicine.png)
+![Emotional Support](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/releasev1/emotionalsupport.png)
 
 # Licence
 See `LICENSE` for further information.
+
+
+# Contributing
+
+1. Fork it ( https://github.com/namutaka/huginn_garoon_agents/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
 
 # With Thanks
 
