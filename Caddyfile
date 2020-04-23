@@ -1,0 +1,10 @@
+domain.com {
+    root * /var/www/COVID-19-Emergency-Response-Hub
+    tls youremail@domain.com
+    reverse_proxy localhost:5000
+    header {
+	X-Content-Type-Options nosnif
+	X-Frame-Options DENY
+	Referrer-Policy no-referrer-when-downgrade
+   }
+}

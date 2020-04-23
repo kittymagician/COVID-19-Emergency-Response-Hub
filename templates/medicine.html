@@ -1,20 +1,34 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<title>Medicine Hub</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous">
+<title>Medication Hub</title>
+<div class=container"><br>
 <div class="formwrapper">
-  <center>
+<div class="row align-items-center justify-content-center text-center">
+<div class="col-md-6">
   <h2 class="title">Medicine Hub</h2>
-  <p>The community hub is able to provide pick ups for local residents. Leave a message below and one of our volenteers will be in touch.</p>
+  <p>The community hub is able to provide pick ups for local residents.</p> 
+  <p>Leave a message below and one of our volunteers will be in touch.</p>
   <p>Please include the pharmacy you want your items picked up from and if they are paid for or free and how many items.</p>
   <form class="form-signin" method="POST" action="/hub/medicine">
       {{ form.csrf_token }}
-      <div class="form-field">{{ form.telephonenumber.label }} {{ form.telephonenumber }}</div>
-      <div class="form-field">{{ form.medication.label }} {{ form.medication }}</div>
-      <button type="submit">Submit your Medication request</button>
+      <div class="form-field">
+      <span class="input-group-addon"><i class="fa fa-phone fa-fw"></i></span>   
+      {{ form.telephonenumber(placeholder='enter your phone number') }}</div>
+      <br>
+      <div class="form-field">
+      <span class="input-group-addon"><i class="fa fa-pills fa-fw"></i></span>
+      {{ form.medication(placeholder='enter your medication') }}
+      </div>
+      <br>
+      <center>
+      <button type="submit" class="btn btn-success"><i class="far fa-paper-plane fa-fw"></i>Submit Request</button>
+      </center>
   </form>
-  <p>Please note: You will need to get your Doctor to send your perscription electronically to your pharmacy of choice.</p>
-  <p><a href="{{ url_for('hub') }}">Return back to the Hub.</a></p>
+  <center><p><a href="{{ url_for('hub') }}"><i class="fas fa-arrow-circle-left fa-lg"></i></a></p></center>
 </div>
-  </center>
+</div>
+</div>
+</div>
 </html>

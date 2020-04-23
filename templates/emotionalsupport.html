@@ -1,19 +1,35 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous">
 <title>Emotional Support Hub</title>
+<div class=container"><br>
 <div class="formwrapper">
-  <center>
+<div class="row align-items-center justify-content-center text-center">
+<div class="col-md-6">
   <h2 class="title">Emotional Support Hub</h2>
-  <p>In the current strange times we know how hard it can be when your on your own. We provide a free volenteer callback service so you can chat with one of our volenteers</p>
-  <p>If you need urgent support please phone Samaritans: 116 123 </p>
+  <p>In the current strange times we know how hard it can be when your on your own.</p> 
+  <p>We provide a free callback service so you can chat with one of our volunteers</p> 
+  <p>Leave a message below and one of our volunteers will be in touch.</p>
+  <p>If you need urgent support please phone Samaritans:<a href="tel:116123">116 123</a></p>
   <form class="form-signin" method="POST" action="/hub/emotionalsupport">
       {{ form.csrf_token }}
-      <div class="form-field">{{ form.telephonenumber.label }} {{ form.telephonenumber }}</div>
-      <div class="form-field">{{ form.emotional.label }} {{ form.emotional }}</div>
-      <button type="submit">Submit your Emotional Support Request</button>
+      <div class="form-field">
+      <span class="input-group-addon"><i class="fa fa-phone fa-fw"></i></span>   
+      {{ form.telephonenumber(placeholder='enter your phone number') }}</div>
+      <br>
+      <div class="form-field">
+      <span class="input-group-addon"><i class="fa fa-clock fa-fw"></i></span>
+      {{ form.emotional(placeholder='ideal time to call back') }}
+      </div>
+      <br>
+      <center>
+      <button type="submit" class="btn btn-success"><i class="far fa-paper-plane fa-fw"></i>Submit Request</button>
+      </center>
   </form>
-  <p><a href="{{ url_for('hub') }}">Return back to the Hub.</a></p>
+  <center><p><a href="{{ url_for('hub') }}"><i class="fas fa-arrow-circle-left fa-lg"></i></a></p></center>
 </div>
-  </center>
+</div>
+</div>
+</div>
 </html>

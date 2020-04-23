@@ -123,25 +123,11 @@ def create_app():
     @app.route('/member_page')
     @login_required    # User must be authenticated
     def member_page():
-        # String-based templates
-        return render_template_string("""
-            {% extends "flask_user_layout.html" %}
-            {% block content %}
-                <h2>Volunteer Hub</h2>
-                <p><a href={{ url_for('food') }}>Food Form</a>
-                <p><a href={{ url_for('medication') }}>Medication Form</a>
-                <p><a href={{ url_for('emotionalsupport') }}>Emotional Support Form</a>
-                <p><a href={{ url_for('fullreport') }}>Full Report</a></p>
-                <p><a href={{ url_for('openreport') }}>All Open Cases</a></p>
-                <p><a href={{ url_for('assignedreport') }}>All Assigned Cases</a></p>
-                <p><a href={{ url_for('dashboard') }}>Dashboard</a></p>
-                <p><a href={{ url_for('user.logout') }}>Sign out</a></p>
-            {% endblock %}
-            """)
+      return redirect(url_for('dashboard')) 
     @app.route("/reportcenter")
     @login_required
     def reportcenter():
-      return redirect(url_for('member_page'))
+      return redirect(url_for('dashboard'))
     @app.route("/reportcenter/dashboard")
     @login_required
     def dashboard():
