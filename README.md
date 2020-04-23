@@ -23,7 +23,7 @@ See the installation guide on the [Wiki](https://github.com/kittymagician/COVID-
 
 # Screenshots
 ![Home Screen](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/releasev1/home.png)
-![Dashboard](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots//releasev1dashboard.png)
+![Dashboard](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/releasev1/dashboard.png)
 ![Full Report](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/fullreport.png)
 ![Food](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/releasev1/food.png)
 ![Medicine](https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/blob/master/screenshots/releasev1/medicine.png)
