@@ -35,7 +35,7 @@ See `LICENSE` for further information.
 
 # Contributing
 
-1. Fork it ( https://github.com/namutaka/huginn_garoon_agents/fork )
+1. Fork it ( https://github.com/kittymagician/COVID-19-Emergency-Response-Hub/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
