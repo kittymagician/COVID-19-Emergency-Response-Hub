@@ -10,6 +10,11 @@ html body {
 	padding-right: 30px;
 }
 
+.row {
+
+	margin: 0;
+}
+
 /* MENU */
 
 .menuBase {
