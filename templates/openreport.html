@@ -44,74 +44,86 @@
 
 </head>
 
+<div class="container-fluid mt-4">
+    <div class="row table-responsive-sm">
+        <h1 class="mb-4">Open Web Reports</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Telephone Number</th>
+                    <th scope="col">Request Category</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">[Button Content Here]</th>
+                </tr>
+            </thead>
+            {% for item in web %}
+            <tbody>
+                <tr>
+                    <td>{{item[1]}}</td>
+                    <td>{{item[2]}}</td>
+                    <td>{{item[3]}}</td>
+                    <td>{{item[4]}}</td>
+                    <td><a href="/reportcenter/web/assign/{{item[0]}}">Assign</a>&nbsp;<a href="/reportcenter/web/close/{{item[0]}}">Close</a></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</div>
 
+<div class="container-fluid mt-4">
+    <div class="row table-responsive-sm">
+        <h1 class="mb-4">Open SMS Reports</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Telephone Number</th>
+                    <th scope="col">Request Category</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">[Button Content Here]</th>
+                </tr>
+            </thead>
+            {% for item in sms %}
+            <tbody>
+                <tr>
+                    <td>{{item[1]}}</td>
+                    <td>{{item[2]}}</td>
+                    <td>{{item[3]}}</td>
+                    <td>{{item[4]}}</td>
+                    <td><a href="/reportcenter/web/assign/{{item[0]}}">Assign</a>&nbsp;<a href="/reportcenter/web/close/{{item[0]}}">Close</a></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</div>
 
-
-
-
-
-
-<br>
-<h3>Open Web Reports</h3>
-<table class="table table-bordered">
-<thead>
-      <tr>
-        <th>Edit</th>
-        <th>Telephone Number</th>
-        <th>Request Category</th>
-        <th>Message</th>
-        <th>Status</th>
-      </tr>
-</thead>
-{% for item in web %}
-<tr>
-    <td><a class="btn btn-primary" href="/reportcenter/web/assign/{{item[0]}}" role="button">Assign?</a>&nbsp;<a class="btn btn-outline-danger" href="/reportcenter/web/close/{{item[0]}}" role="button">Close</a></td>
-    <td>{{item[1]}}</td>
-    <td>{{item[2]}}</td>
-    <td>{{item[3]}}</td>
-    <td>{{item[4]}}</td>
-</td>
-{% endfor %}
-</table>
-<h3>Open SMS Reports</h3>
-<table class="table table-bordered">
-<thead>
-      <tr>
-        <th>Edit</th>
-        <th>Telephone Number</th>
-        <th>Request Category</th>
-        <th>Message</th>
-        <th>Status</th>
-      </tr>
-</thead>
-{% for item in sms %}
-<tr>
-    <td><a class="btn btn-primary" href="/reportcenter/sms/assign/{{item[0]}}" role="button">Assign?</a>&nbsp;<a class="btn btn-outline-danger" href="/reportcenter/sms/close/{{item[0]}}" role="button">Close</a></td>
-    <td>{{item[1]}}</td>
-    <td>{{item[2]}}</td>
-    <td>{{item[3]}}</td>
-    <td>{{item[4]}}</td>
-</td>
-{% endfor %}
-</table>
-<h3>Open Phone Reports</h3>
-<table class="table table-bordered">
-<thead>
-      <tr>
-        <th>Edit</th>
-        <th>Telephone Number</th>
-        <th>Request Category</th>
-        <th>Message</th>
-        <th>Status</th>
-      </tr>
-</thead>
-{% for item in phone %}
-<tr>
-    <td><a class="btn btn-primary" href="/reportcenter/phone/assign/{{item[0]}}" role="button">Assign?</a>&nbsp;<a class="btn btn-outline-danger" href="/reportcenter/phone/close/{{item[0]}}" role="button">Close</a></td>
-    <td>{{item[1]}}</td>
-    <td>{{item[2]}}</td>
-    <td>{{item[3]}}</td>
-    <td>{{item[4]}}</td>
-</td>
-{% endfor %}
-</table>
+<div class="container-fluid mt-4">
+    <div class="row table-responsive-sm">
+        <h1 class="mb-4">Open Phone Reports</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Telephone Number</th>
+                    <th scope="col">Request Category</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">[Button Content Here]</th>
+                </tr>
+            </thead>
+            {% for item in phone %}
+            <tbody>
+                <tr>
+                    <td>{{item[1]}}</td>
+                    <td>{{item[2]}}</td>
+                    <td>{{item[3]}}</td>
+                    <td>{{item[4]}}</td>
+                    <td><a href="/reportcenter/web/assign/{{item[0]}}">Assign</a>&nbsp;<a href="/reportcenter/web/close/{{item[0]}}">Close</a></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</div>
