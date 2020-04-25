@@ -83,17 +83,31 @@ h2 {
 
  .navbar-toggler {
 
- 	background-color: white;
- 	border-radius: 3px 3px 0px 0px;
  	border: none;
  }
 
+.navbar-light .navbar-toggler-icon {
+
+	background-color: white;
+	border-radius: 3px;
+	width: 45px;
+ 	height: 35px;
+	position: absolute;
+	right: 0;
+	top: -30px;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(83, 82, 237, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (min-width: 768px) {
+
+	}
 
 .dashMenu {
 
 	background-color: #5352ED;
 	min-height: 140px;
 	min-width: 100vw;
+	margin-bottom: 20px;
 }
 
 .dashMenu h1 {
@@ -105,7 +119,7 @@ h2 {
  .dashMenu li {
 
 	color: white;
-	margin: 20px 0px 0px 0px;
+	margin-bottom: 20px;
 
 }
 
@@ -179,19 +193,11 @@ h2 {
 }
 
 
-
-
 @media (min-width: 576px) {
 
 }
 
 @media (min-width: 768px) {
-
-
-
-}
-
-@media (min-width: 992px) { 
 
 	.dashMenu li {
 
@@ -214,6 +220,15 @@ h2 {
 	display: initial;
 
 	}
+
+	.dashMenu a:hover {
+
+		border-bottom: 1px solid white;
+	}
+
+}
+
+@media (min-width: 992px) { 
 
 
  }
