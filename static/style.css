@@ -15,6 +15,82 @@ html body {
 	margin: 0;
 }
 
+
+/* ----------- Splash Page -> Navigation ----------- */
+
+.splash_Nav {
+
+	background-color: #5352ED;
+	min-height: 60px;
+	color: white;
+}
+
+
+/* ----------- Splash Page -> Introduction ----------- */
+
+.splash_Intro h1 {
+
+	font-size: 24px;
+	font-weight: bold;
+	color: #5352ED;
+}
+
+.splash_Intro h2 {
+
+	font-size: 20px;
+	font-weight: normal;
+	color: #2F3640;
+	margin-top: 80px;
+}
+
+.splash_Intro p {
+
+	margin-top: 40px;
+	font-size: 16px;
+	font-weight: normal;
+	color: #2F3640;
+	margin-top: 20px;
+}
+
+.splash_Intro button {
+
+	color: #5352ED;
+	background-color: transparent;
+	height: 40px;
+	padding: 8px 16px;
+	border: 1px solid #5352ED;
+}
+
+.btn:hover {
+
+	color: white;
+	background-color: #5352ED;
+}
+
+.splash_Image_Main {
+
+	width: 100%;
+	height: 304px;
+	margin-top: 40px;
+	background-image: url('../static/town.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* MENU */
 
 .menuBase {
@@ -46,7 +122,7 @@ h1 {
 
 h2 {
 
-	font-size: 16px;
+	font-size: 20px;
 	font-weight: normal;
 	line-height: 24px;
 }

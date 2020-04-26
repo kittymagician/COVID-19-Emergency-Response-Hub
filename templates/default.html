@@ -1,20 +1,40 @@
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
 <head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous"> 
- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"/> 
- <link rel="stylesheet" href="../static/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../static/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"/> 
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <title>Community Emergency Response Hub</title>
-</head>
-<div class="menuBase">
+
+<div class="splash_Nav">
   <div class="container-fluid">
     <div class="row">
-      <div class="col d-flex align-items-center">
-        <a href="/member_page"><button class="volLogin">Volunteer Login</button></a>
+      <div class="col">
+        <a href="/member_page"><button class="">Volunteer Login [TEMP]</button></a>
       </div>
+    </div>
+  </div>
+</div>
+
+</head>
+
+<body>
+
+<div class="container-fluid splash_Intro">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <h2>Welcome to the</h2>
+      <h1>Community Emergency Response Hub</h1>
+      <p>Here you can request community support for medical and food supplies as well as emotional support callbacks.</p>
+      <button class="btn">Get Started</button>
+      <button class="btn ml-3">Find Out More</button>
+    </div>
+    <div class="col-12 col-md-5">
+      <div class="splash_Image_Main"></div>
     </div>
   </div>
 </div>
@@ -22,48 +42,19 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col">
-        <h1 class="title">Welcome to the Community Emergency Response Hub.</h1>
-        <h2 class="subTitle">Here you can request community support for medical and food supplies as well as emotional support callbacks.</h2>
+      TEMP PLACE FOR LINKS: 
+      <li><a href="/gdpr">GDPR/Privacy Policy</a></li>
+      <li><a href="/hub/food">FOOD</a></li>
+      <li><a href="/hub/medicine">MEDICINE</a></li>
+      <li><a href="/hub/emotionalsupport">EMOTIONAL SUPPORT</a></li>
     </div>
   </div>
 </div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-md-4 mb-3">
-      <a href="/hub/food">
-      <div class="card text-white bg-primary">
-          <div class="card-body">
-            <i class="fas fa-utensils"></i>
-            <h5 class="card-title">Food</h5>
-          </div>
-      </div>
-    </a>
-    </div>
-    <div class="col-12 col-md-4 mb-3">
-      <a href="/hub/medicine">
-      <div class="card text-white bg-success">
-          <div class="card-body">
-            <i class="fas fa-prescription-bottle-alt"></i>
-            <h5 class="card-title">Medicine</h5>
-          </div>
-      </div>
-    </a>
-    </div>
-    <div class="col-12 col-md-4 mb-3">
-      <a href="/hub/emotionalsupport">
-      <div class="card text-white bg-danger">
-          <div class="card-body">
-            <i class="fas fa-users"></i>
-            <h5 class="card-title">Emotional Support</h5>
-          </div>
-      </div>
-    </a>
-    </div>
-  </div>
-</div>
+</body>
 
-<center><p><a href="/member_page">Volunteer Login</a> | <a href="/gdpr">GDPR/Privacy Policy</a></p></center>
+</html>
+
 <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
 <script nonce="{{ csp_nonce() }}">
 window.cookieconsent.initialise({
@@ -79,4 +70,3 @@ window.cookieconsent.initialise({
    "static": true
 });
 </script>
-
