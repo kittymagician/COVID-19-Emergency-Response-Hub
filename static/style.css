@@ -6,7 +6,90 @@ html body {
 .container-fluid {
 
 	max-width: 1440px;
+	padding-left: 30px;
+	padding-right: 30px;
 }
+
+.row {
+
+	margin: 0;
+}
+
+
+/* ----------- Splash Page -> Navigation ----------- */
+
+.splash_Nav {
+
+	background-color: #5352ED;
+	min-height: 60px;
+	color: white;
+}
+
+
+/* ----------- Splash Page -> Introduction ----------- */
+
+.splash_Intro h1 {
+
+	font-size: 24px;
+	font-weight: bold;
+	color: #5352ED;
+}
+
+.splash_Intro h2 {
+
+	font-size: 20px;
+	font-weight: normal;
+	color: #2F3640;
+	margin-top: 80px;
+}
+
+.splash_Intro p {
+
+	margin-top: 40px;
+	font-size: 16px;
+	font-weight: normal;
+	color: #2F3640;
+	margin-top: 20px;
+}
+
+.splash_Intro button {
+
+	color: #5352ED;
+	background-color: transparent;
+	height: 40px;
+	padding: 8px 16px;
+	border: 1px solid #5352ED;
+}
+
+.btn:hover {
+
+	color: white;
+	background-color: #5352ED;
+}
+
+.splash_Image_Main {
+
+	width: 100%;
+	height: 304px;
+	margin-top: 40px;
+	background-image: url('../static/town.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* MENU */
 
@@ -39,7 +122,7 @@ h1 {
 
 h2 {
 
-	font-size: 16px;
+	font-size: 20px;
 	font-weight: normal;
 	line-height: 24px;
 }
@@ -83,17 +166,31 @@ h2 {
 
  .navbar-toggler {
 
- 	background-color: white;
- 	border-radius: 3px 3px 0px 0px;
  	border: none;
  }
 
+.navbar-light .navbar-toggler-icon {
+
+	background-color: white;
+	border-radius: 3px;
+	width: 45px;
+ 	height: 35px;
+	position: absolute;
+	right: 0;
+	top: -30px;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(83, 82, 237, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (min-width: 768px) {
+
+	}
 
 .dashMenu {
 
 	background-color: #5352ED;
 	min-height: 140px;
 	min-width: 100vw;
+	margin-bottom: 20px;
 }
 
 .dashMenu h1 {
@@ -105,7 +202,7 @@ h2 {
  .dashMenu li {
 
 	color: white;
-	margin: 20px 0px 0px 0px;
+	margin-bottom: 20px;
 
 }
 
@@ -179,19 +276,11 @@ h2 {
 }
 
 
-
-
 @media (min-width: 576px) {
 
 }
 
 @media (min-width: 768px) {
-
-
-
-}
-
-@media (min-width: 992px) { 
 
 	.dashMenu li {
 
@@ -214,6 +303,15 @@ h2 {
 	display: initial;
 
 	}
+
+	.dashMenu a:hover {
+
+		border-bottom: 1px solid white;
+	}
+
+}
+
+@media (min-width: 992px) { 
 
 
  }

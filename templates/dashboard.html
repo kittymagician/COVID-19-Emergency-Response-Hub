@@ -12,16 +12,16 @@
 <div class="dashMenu">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col">
+			<div class="col p-0">
 				<h1>Welcome Back, {{ current_user.username }}</h1>
 			</div>
 		</div>
-		<nav class="navbar navbar-expand-lg navbar-light">
+		<nav class="navbar navbar-expand-md navbar-light">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 			<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<ul class="navbar-nav mr-auto mt-2 mt-md-0">
 					<li class="nav-item">
 						<a class="active" href="#">Your Dashboard</a>
 					</li>
@@ -88,7 +88,7 @@
 	</div>
 </div>
 
-
+</body>
 
 <script nonce="{{ csp_nonce() }}">
 var dt = new Date();
@@ -122,4 +122,5 @@ else if (window.attachEvent)
 	window.attachEvent("load", beginrefresh)
 
 </script>
+
 </html>
